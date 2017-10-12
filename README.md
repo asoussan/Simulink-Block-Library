@@ -3,7 +3,7 @@
 
 Before doing anything, download the "Matlab Toolbox for the iRobot Create 2" add-on from Mathworks.com and add it to your path. A single chart and one function exists for each block for simplicity.
 
---- wifi init --
+--- wifi init ---
 This block has one output, which assigns a TCPIP serial object to the other two blocks. The coder.extrinsic command is used to set up RoombaWifiInit as a persistent object. Using the assignin command, the object is passed to a global variable 'objWs' before going to 'base'. A "dummy" sink is connected so that an output can be connected to the library block.
 
 --- ir sensors ---
@@ -15,4 +15,4 @@ Coder.extrinsic is implemented in order for us to use evalin, get, and RangeStat
 This block is used to control the speed of the left and right motor. Three inputs and no outputs exists in this block. The first input is the TCPIP object from the wifi init block. Two other inputs are constants that represent the wheel speed from -0.5 to 0.5 (negative is reverse). Similarly to the last block, the function checks if the object is empty and passes the TCPIP from the previous block with the workspace variable 'objWs'. Again, coder.extrinsic is needed to implement evalin, get, and SetWheelVelRoomba(from add-on). SetWheelVelRoomba does not need to be set to a variable like RangeStateRoomba since this block contains no output data.
 
 
-A test case is provided with two constants 0.3 set as wheel speed and a display connected to the output of the IR sensing block.
+*** A test case is provided with two constants 0.3 set as wheel speed and a display connected to the output of the IR sensing block.
