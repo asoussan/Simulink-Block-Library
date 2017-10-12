@@ -14,5 +14,4 @@ Coder.extrinsic is implemented in order for us to use evalin, get, and RangeStat
 --- wheel velocity control ---
 This block is used to control the speed of the left and right motor. Three inputs and no outputs exists in this block. The first input is the TCPIP object from the wifi init block. Two other inputs are constants that represent the wheel speed from -0.5 to 0.5 (negative is reverse). Similarly to the last block, the function checks if the object is empty and passes the TCPIP from the previous block with the workspace variable 'objWs'. Again, coder.extrinsic is needed to implement evalin, get, and SetWheelVelRoomba(from add-on). SetWheelVelRoomba does not need to be set to a variable like RangeStateRoomba since this block contains no output data.
 
-
-*** A test case is provided with two constants 0.3 set as wheel speed and a display connected to the output of the IR sensing block.
+A test case is provided with two constants 0.3 set as wheel speed and a display connected to the output of the IR sensing block.
